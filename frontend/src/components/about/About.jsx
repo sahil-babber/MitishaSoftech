@@ -23,7 +23,7 @@ function About() {
             
               </div>
             </div>
-            <h2 className=" Sectional-heading mt-4 pt-3 ms-2 syne">ENTERPRISE</h2>
+            <h2 className=" Sectional-heading mt-4 pt-3 ms-2 syne">About Us</h2>
           </div>
         </div>
         <div className="bg-web-hero-img"></div>

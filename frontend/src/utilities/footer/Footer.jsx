@@ -38,10 +38,10 @@ function Footer() {
                 <div className="d-flex justify-content-between flex-wrap">
   <div className="social-media">
     <ul className="d-flex flex-wrap list-unstyled p-0 m-0 gap-4 mt-2">
-      <li><a href="/" className="footer-link">Facebook</a></li>
-      <li><a href="/" className="footer-link">Instagram</a></li>
-      <li><a href="/" className="footer-link">LinkedIn</a></li>
-      <li><a href="/" className="footer-link">Twitter</a></li>
+      {/* <li><a href="/" target='_blank' className="footer-link">Facebook</a></li> */}
+      <li><a href="https://www.instagram.com/mitishasoftech_?igsh=MXFmcDVyNjQ0MDJmMA==" target='_blank' className="footer-link">Instagram</a></li>
+      <li><a href="https://www.linkedin.com/company/mitisha-softech-pvt-ltd/" target='_blank' className="footer-link">LinkedIn</a></li>
+      <li><a href="/" target='_blank' className="footer-link">Twitter</a></li>
     </ul>
   </div>
   <div className="quick-links">

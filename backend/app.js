@@ -11,7 +11,6 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var employeeRouter = require('./routes/employee');
 var internRouter = require('./routes/intern');
-var contactRouter= require('./routes/contacts');
 var app = express();
 var http = require('http').createServer(app);
 dotenv.config();
@@ -35,7 +34,6 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/employees',employeeRouter);
 app.use('/interns', internRouter);
-app.use('/contacts', contactRouter);
 
 app.get('*',(req,res) => {
   res.sendFile(path.join(__dirname,'../frontend/dist/index.html'));

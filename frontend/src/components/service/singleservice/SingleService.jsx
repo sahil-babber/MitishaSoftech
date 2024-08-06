@@ -157,7 +157,7 @@ function SingleService() {
             serviceid:5,
             servicename:"App Development",
             servicedesc:"Unparalleled app development tailored to your unique needs.",
-            heading1: "AppInvent Innovation",
+            heading1: "App Innovation",
             image:"https://d2ms8rpfqc4h24.cloudfront.net/mobile_application_development_ad3f711b7d.jpg",
             text1: "The construction of mobile applications for several platforms, including iOS, Android, and cross-platform solutions, is the focus of app development services. Setting goals, conducting market research, organizing, designing, developing, testing, and implementing are all steps in this process. To ensure a user-friendly interface and functioning, app developers utilize programming languages and frameworks to build the front-end and back-end of the app. Prototyping, performance and bug testing, as well as continuing maintenance, are additional possible services. The goal of app development is to deliver solutions that satisfy user requirements, improve user experience, and accomplish particular professional or personal goals.",
             text2: "App development services are of paramount importance in today's digital landscape. These services play a critical role in enhancing accessibility and convenience by providing users with seamless access to information and services through their smartphones. With the potential for global reach, businesses and individuals can transcend geographical boundaries and engage a broader audience. The development of well-designed apps not only contributes to increased brand visibility and recognition but also provides a competitive advantage in industries where user convenience is a key differentiator. Additionally, apps offer avenues for revenue generation through various strategies and enable businesses to gather valuable data insights for informed decision-making. The overall impact is an enriched user experience, fostering customer engagement and satisfaction. In essence, app development services are instrumental in shaping the digital presence of businesses and individuals, offering a dynamic platform for innovation, connectivity, and growth.",
@@ -272,15 +272,19 @@ function SingleService() {
 
             <div className="container">
                 <div className="row">
-                    <div className="col-lg-5 service-img-container mt-3">
-                        <img src={service.image} alt={service.servicename} className="custom-img" />
+                    <div className="col-lg-5  mt-3">
+                    <div className="solution-img-container why-choose-us-img">
+                        <img src={service.image} alt={service.servicename} className="solution-img" />
+                        </div>
                     </div>
                     <div className="col-lg-1"></div>
-                    <div className="col-lg-6 p-3 mt-3">
-                        <h2 className="syne">{service.heading1}</h2>
+                    <div className="col-lg-6 d-flex align-items-center mt-3">
+                       <div>
+                       <h2 className="syne">{service.heading1}</h2>
                         <div className="text-muted sora lh-base mt-3">
                             {service.text1}
                         </div>
+                       </div>
                     </div>
                 </div>
 

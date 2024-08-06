@@ -4,6 +4,7 @@ import { SiStartrek } from "react-icons/si";
 import { BsGraphUpArrow } from "react-icons/bs";
 import { BiLogoGraphql } from "react-icons/bi";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 function Collaborate() {
     return (
@@ -15,7 +16,7 @@ function Collaborate() {
                         <ul>
                             <li className="syne">Discover Our Company</li>
                         </ul>
-                        <h2 className='Sectional-heading syne mt-3 mb-3'>How We  <span className="text-orange"> Collaborate </span> With You </h2>
+                        <h2 className='Sectional-heading syne mt-3 mb-3'><span className="text-orange"> About </span> Us  </h2>
                         <div className="row mt-5">
                             <div className="col-lg-3 col-md-6 col-sm-12 ">
                                 <div className="d-flex gap-3 align-items-center">
@@ -65,9 +66,9 @@ function Collaborate() {
                         </div>
                         <div className="mt-4 d-flex justify-content-between flex-wrap">
                             <div className="syne learn-more mt-2" >
-                                Learn More <span className="arrow-icon ms-3"><FaArrowRightLong /></span>
+                                {/* Learn More <span className="arrow-icon ms-3"><FaArrowRightLong /></span> */}
                             </div>
-                            <div className="mt-2"> <a href="#" className="btn btn-mitisha text-black btn-orange">How We Work</a></div>
+                            <div className="mt-2"> <Link to="/about" className="btn btn-mitisha text-black btn-orange">How We Work</Link></div>
                         </div>
                         <div className="bg-web-bottom-img"></div>
                     </div>

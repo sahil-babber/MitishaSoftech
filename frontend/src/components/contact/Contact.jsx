@@ -17,7 +17,7 @@ function Contact() {
   // Handle form submission
 
   const sendEmail = (data) => {
-    return emailjs.send('service_kwg3lh3', 'template_gxgenv9', {
+    return emailjs.send('service_vusgmld', 'template_gxgenv9', {
       firstName: data.firstName,
       lastName: data.lastName,
       email: data.email,
@@ -34,7 +34,7 @@ function Contact() {
       .then(() => {
         console.log('SUCCESS!');
         toast.success('Query sent...!');
-        reset(); // Clear the form data
+        reset(); 
       })
       .catch((error) => {
         console.error('FAILED...', error.text);
@@ -309,12 +309,12 @@ function Contact() {
               </div>
               <div className="d-flex align-items-center mt-4">
                 <span className='contact-logo me-3'><FaPhoneAlt /></span>
-                <span className='service-info'>+91 77079-34521</span>
+                <span className='service-info'>+91 9465-654521</span>
               </div>
 
               <div className="d-flex align-items-center mt-4">
                 <span className='contact-logo me-3'><IoMdMail /></span>
-                <span className='service-info'>info@mitishasoftech.in</span>
+                <span className='service-info'>info@mitishasoftech.com</span>
               </div>
 
             </div>

@@ -1,6 +1,7 @@
 import "./Skills.css"
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import { FaArrowRightLong } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 function Skills() {
     return (
         <>
@@ -212,7 +213,7 @@ function Skills() {
 
                     <div className="col-lg-3 col-md-6 col-sm-12 d-flex justify-content-center align-items-center   mt-3">
                     <div className="syne learn-more">
-                                 More <span className="arrow-icon ms-3"><FaArrowRightLong /></span>
+                                 More <Link to='/services'> <span className="arrow-icon ms-3"><FaArrowRightLong /></span></Link>
                             </div>
                     </div>
 

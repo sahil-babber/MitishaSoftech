@@ -5,6 +5,9 @@ import "slick-carousel/slick/slick-theme.css";
 import './Projects.css';
 import project1 from '/project-1.jpeg'
 import project2 from '/project-2.jpeg'
+import project3 from '/project-3.jpeg'
+import project4 from '/project-4.jpeg'
+
 
 function Projects() {
     const settings = {
@@ -81,35 +84,47 @@ function Projects() {
                                                 <div className="product-container-tittle syne">
                                                 NextGen Auto Solutions
                                                     <div className="mt-2 by-name">
-                                                        by: <span className="text-orange">Ajay</span>
+                                                        by: <span className="text-orange">Ajay Sharma</span>
                                                     </div>
                                                 </div>
                                                 <div className="product-container-text text-muted me-2">Developed a WordPress website for Nextgen Auto Solutions, specializing in comprehensive car service solutions. </div>
                                             </div>
                                         </div>
-
+                                        <div className="project-container">
+                                            <img src={project4} alt="car logo" className="project-img" />
+                                            <div className="product-container-content d-flex justify-content-between gap-5 mt-4">
+                                                <div className="product-container-tittle syne">
+                                                    Odilia Global
+                                                    <div className="mt-2 by-name">
+                                                        by: <span className="text-orange">Anurag Sharma</span>
+                                                    </div>
+                                                </div>
+                                                <div className="product-container-text text-muted me-2">Created an wordpress website for Odilia Global, offering IT solutions  and services.</div>
+                                            </div>
+                                        </div>
+                                      
+                                        <div className="project-container">
+                                            <img src={project3} alt="car logo" className="project-img" />
+                                            <div className="product-container-content d-flex justify-content-between gap-5 mt-4">
+                                                <div className="product-container-tittle syne">
+                                                    Cristiana Koller
+                                                    <div className="mt-2 by-name">
+                                                        by: <span className="text-orange">Jane Meldrum</span>
+                                                    </div>
+                                                </div>
+                                                <div className="product-container-text text-muted me-2">Created an React website for Cristiana Koller, offering beauty solutions  and services.</div>
+                                            </div>
+                                        </div>
                                         <div className="project-container">
                                             <img src={project2} alt="car logo" className="project-img" />
                                             <div className="product-container-content d-flex  justify-content-between gap-5 mt-4">
                                                 <div className="product-container-tittle syne">
                                                     Ds Graphics
                                                     <div className="mt-2 by-name">
-                                                        by: <span className="text-orange">Monu</span>
+                                                        by: <span className="text-orange">Satish</span>
                                                     </div>
                                                 </div>
                                                 <div className="product-container-text text-muted me-2">Created an HTML, CSS, and JavaScript website for DS Graphics, offering advanced printing solutions and services. </div>
-                                            </div>
-                                        </div>
-                                        <div className="project-container">
-                                            <img src="https://media.licdn.com/dms/image/D5622AQEONcXT0gVA5w/feedshare-shrink_800/0/1720189403396?e=2147483647&v=beta&t=ng87p1d6SOWjbOdIZeDVnZcQlfpSqMW0U_ifmifppls" alt="car logo" className="project-img" />
-                                            <div className="product-container-content d-flex justify-content-between gap-5 mt-4">
-                                                <div className="product-container-tittle syne">
-                                                    Easy & Most Powerful Server Platform
-                                                    <div className="mt-2 by-name">
-                                                        by: <span className="text-orange">Jane Meldrum</span>
-                                                    </div>
-                                                </div>
-                                                <div className="product-container-text text-muted me-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat, voluptates! Lorem ipsum dolor sit amet </div>
                                             </div>
                                         </div>
                                     </Slider>

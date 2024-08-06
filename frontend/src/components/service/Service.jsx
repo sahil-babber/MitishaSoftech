@@ -104,7 +104,7 @@ function Service() {
                       Dissuade ecstatic and properly saw entirely sir why laughter endeavor. In on my jointure horrible margaret suitable he followed speedily. Indeed vanity excuse or mr lovers of on.
                       </p>
                       <div className="syne learn-more mt-3 mb-4" >
-                      Request a Free Demo <span className="arrow-icon-demo ms-3"><FaArrowRightLong /></span>
+                      Request a Free Demo <Link to='/contact'> <span className="arrow-icon ms-3"><FaArrowRightLong /></span></Link>
             </div>
                      </div>
                     </div>
@@ -115,7 +115,7 @@ function Service() {
                       Dissuade ecstatic and properly saw entirely sir why laughter endeavor. In on my jointure horrible margaret suitable he followed speedily. Indeed vanity excuse or mr lovers of on.
                       </p>
                       <div className="syne learn-more mt-3 mb-4" >
-                      Get In Touch <span className="arrow-icon-demo ms-3"><FaArrowRightLong /></span>
+                      Get In Touch <Link to='/contact'> <span className="arrow-icon ms-3"><FaArrowRightLong /></span></Link>
             </div>
               </div>
                     </div>

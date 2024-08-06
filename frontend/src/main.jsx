@@ -21,6 +21,12 @@ import Solutions from './components/solutions/Solutions.jsx';
 import Verify from './components/verify/Verify.jsx';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Mern from './components/solutions/solutiondetails/Mern.jsx';
+import Digital from './components/solutions/solutiondetails/Digital.jsx';
+import Seo from './components/solutions/solutiondetails/Seo.jsx';
+import App from './components/solutions/solutiondetails/App.jsx';
+import Frontend from './components/solutions/solutiondetails/Frontend.jsx';
+import Backend from './components/solutions/solutiondetails/Backend.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -43,6 +49,15 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/sitemap" element={<Sitemap/>} />
           <Route path="/solutions" element={<Solutions/>} />
           <Route path="/verify" element={<Verify/>} />
+          <Route path="/solution/mern" element={<Mern/>} />
+          <Route path="/solution/digital" element={<Digital/>} />
+          <Route path="/solution/seo" element={<Seo/>} />
+          <Route path="/solution/App" element={<App/>} />
+          <Route path="/solution/frontend" element={<Frontend/>} />
+          <Route path="/solution/backend" element={<Backend/>} />
+
+
+
         </Route>
       </Routes>
     </Router>

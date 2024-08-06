@@ -95,16 +95,17 @@ function Header() {
                         <div className={`dropdown nav-item-wrapper ${isOpen.solutions ? 'show' : ''}`} onMouseEnter={() => handleMouseEnter('solutions')} onMouseLeave={() => handleMouseLeave('solutions')} onClick={() => handleDropdownClick('solutions')}>
                             <Link to="/solutions" className='drop-btn'>
                                 <button className={`btn drop-btn me-3 nav-text ${window.location.pathname === '/solutions' ? 'active' : ''}`} type="button" id="dropdownMenuButton" aria-expanded={isOpen.solutions ? "true" : "false"} onClick={handleLinkClick}>
-                                    Solutions
+                                Internship
                                     <span className="orange-circle"></span>
                                 </button>
                             </Link>
                             <ul className={`dropdown-menu ${isOpen.solutions ? 'show' : ''}`} aria-labelledby="dropdownMenuButton">
-                                <li><a className="dropdown-item" href="/diamond" onClick={handleLinkClick}>Diamonds</a></li>
-                                <li><a className="dropdown-item" href="/gold" onClick={handleLinkClick}>Gold</a></li>
-                                <li><a className="dropdown-item" href="/silver" onClick={handleLinkClick}>Silver</a></li>
-                                <li><hr className="dropdown-divider" /></li>
-                                <li><a className="dropdown-item" href="/gems" onClick={handleLinkClick}>Gems</a></li>
+                            <li><Link className="dropdown-item" to="/solution/mern" onClick={handleLinkClick}>MERN Stack</Link></li>
+                            <li><Link className="dropdown-item" to="/solution/digital" onClick={handleLinkClick}>Digital Marketing</Link></li>
+                            <li><Link className="dropdown-item" to="/solution/app" onClick={handleLinkClick}>App Development</Link></li>
+                            <li><Link className="dropdown-item" to="/solution/seo" onClick={handleLinkClick}>SEO</Link></li>
+                            <li><Link className="dropdown-item" to="/solution/frontend" onClick={handleLinkClick}>Frontend Development</Link></li>
+                            <li><Link className="dropdown-item" to="/solution/backend" onClick={handleLinkClick}>Backend Development</Link></li>
                             </ul>
                         </div>
 
