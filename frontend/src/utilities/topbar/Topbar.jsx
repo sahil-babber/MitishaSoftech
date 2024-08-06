@@ -83,7 +83,7 @@ function Topbar() {
                             </ul>
                         </div>
 
-                        {/* <div className={`dropdown nav-item-wrapper ${isOpen.solutions ? 'show' : ''}`} onMouseEnter={() => handleMouseEnter('solutions')} onMouseLeave={() => handleMouseLeave('solutions')} onClick={() => handleDropdownClick('solutions')}>
+                       <div className={`dropdown nav-item-wrapper ${isOpen.solutions ? 'show' : ''}`} onMouseEnter={() => handleMouseEnter('solutions')} onMouseLeave={() => handleMouseLeave('solutions')} onClick={() => handleDropdownClick('solutions')}>
                             <Link to="/solutions" className='drop-btn'>
                                 <button className={`btn drop-topbar-btn me-3 nav-topbar-text ${window.location.pathname === '/solutions' ? 'active' : ''}`} type="button" id="dropdownMenuButton" aria-expanded={isOpen.solutions ? "true" : "false"} onClick={handleLinkClick}>
                                     Solutions
@@ -97,7 +97,7 @@ function Topbar() {
                                 <li><hr className="dropdown-divider" /></li>
                                 <li><a className="dropdown-item" href="/gems" onClick={handleLinkClick}>Gems</a></li>
                             </ul>
-                        </div> */}
+                        </div> 
 
                         <Nav.Link as={Link} to="/contact" className={`me-3 nav-topbar-text ${window.location.pathname === '/contact' ? 'active' : ''}`} onClick={handleLinkClick}>Contact Us</Nav.Link>
                     </Nav>

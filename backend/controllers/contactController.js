@@ -1,4 +1,4 @@
-var db = require('../models/contact.model.js');
+const db = require('../models/contact.model.js');
 require('dotenv').config();
 const nodemailer = require('nodemailer');
 
@@ -6,25 +6,27 @@ const nodemailer = require('nodemailer');
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
-    },
-    debug: true 
+        user: process.env.EMAIL_USER,  // e.g., 'your-email@gmail.com'
+        pass: process.env.EMAIL_PASS   // e.g., 'your-email-password'
+    }
 });
+
 module.exports = {
     getingContactData: async (req, res) => {
         try {
             // Save contact data to the database
             const contactData = await db.create({
-                contactname: req.body.contactname
+                contactname: req.body.contactname,
+                // Add more fields as needed
             });
 
             // Prepare email options
             const mailOptions = {
-                from: '"Mitisha Softech" <info@mitishasoftech.in>',
+                from: '"Mitisha Softech" <cashu853@gmail.com>',
                 to: 'cashu853@gmail.com',
                 subject: 'New Contact Form Submission',
                 text: `Contact Name: ${req.body.contactname}`
+                // Add more details as needed
             };
 
             // Send email

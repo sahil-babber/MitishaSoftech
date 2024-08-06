@@ -19,6 +19,8 @@ import Terms from './components/tems/Terms.jsx';
 import Sitemap from './components/sitemap/Sitemap.jsx';
 import Solutions from './components/solutions/Solutions.jsx';
 import Verify from './components/verify/Verify.jsx';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -44,5 +46,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         </Route>
       </Routes>
     </Router>
+    <ToastContainer />
   </React.StrictMode>,
 )

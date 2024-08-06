@@ -6,14 +6,40 @@ import { FaRegQuestionCircle } from "react-icons/fa";
 import { IoMdInformationCircleOutline } from "react-icons/io";
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
+import emailjs from '@emailjs/browser';
+import { toast } from 'react-toastify';
+
 function Contact() {
+
+
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
   const phoneNumber = '+917707934521';
   // Handle form submission
+
+  const sendEmail = (data) => {
+    return emailjs.send('service_kwg3lh3', 'template_gxgenv9', {
+      firstName: data.firstName,
+      lastName: data.lastName,
+      email: data.email,
+      phone: data.phone,
+      company: data.company,
+      role: data.role,
+      productDesign: data.productDesign,
+      projectDescription: data.projectDescription
+    }, 'pFJwAxD66KyV8YHE-');
+  };
+
   const onSubmit = (data) => {
-    console.log(JSON.stringify(data, null, 2));
-    alert('Submit')
-    reset()
+    sendEmail(data)
+      .then(() => {
+        console.log('SUCCESS!');
+        toast.success('Query sent...!');
+        reset(); // Clear the form data
+      })
+      .catch((error) => {
+        console.error('FAILED...', error.text);
+        alert('There was an error sending your query. Please try again.');
+      });
   };
 
   return (
@@ -36,6 +62,7 @@ function Contact() {
         </div>
         <div className="bg-web-hero-img"></div>
       </div>
+
 
       <div className="container mt-5 pt-lg-5 pb-lg-5 mb-5">
         <div className="row justify-content-between">
