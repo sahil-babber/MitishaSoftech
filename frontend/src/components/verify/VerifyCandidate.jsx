@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import axios from 'axios';
 import { Form, Button, Table } from 'react-bootstrap';
 import './Verify.css'; // Import the CSS file
+import { client } from "../../utilities/api-config";
 
 function VerifyEmploye() {
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -17,7 +18,7 @@ function VerifyEmploye() {
             console.log("Form data submitted:", data);
 
             // Call the API with the form data
-            const response = await axios.post(`/interns/findIntern`, data);
+            const response = await client.post(`/interns/findIntern`, data);
 
             if (response.status === 200 && response.data.success) {
                 setEmployeeData(response.data.body); // Save employee data to state
