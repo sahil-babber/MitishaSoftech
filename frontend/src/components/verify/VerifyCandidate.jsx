@@ -17,7 +17,7 @@ function VerifyCandidate() {
   const onSubmit = async (data) => {
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_APP_API_BASE_URL}/employees/findEmploye`,
+        `${import.meta.env.VITE_APP_API_BASE_URL}/interns/findIntern`,
         {
           method: "POST",
           headers: {
