@@ -4,7 +4,6 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { Form, Button, Table } from "react-bootstrap";
 import "./Verify.css"; // Import the CSS file
-import { client } from "../../utilities/api-config";
 
 function VerifyEmploye() {
   const {
@@ -18,18 +17,29 @@ function VerifyEmploye() {
   // Function to handle form submission
   const onSubmit = async (data) => {
     try {
-      // Log form data for debugging
-      console.log("Form data submitted:", data);
+      const response = await fetch(
+        `${import.meta.env.VITE_APP_API_BASE_URL}/employees/findEmploye`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
 
-      // Call the API with the form data
-      const response = await client.post(`/employees/findEmploye`, data);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
 
-      if (response.status === 200 && response.data.success) {
-        setEmployeeData(response.data.body); // Save employee data to state
+      const result = await response.json();
+
+      if (result.status === 200 && result.data.success) {
+        setEmployeeData(result.data.body); // Save employee data to state
         setErrorMessage(""); // Clear any previous error messages
       } else {
         setEmployeeData(null); // Clear employee data
-        setErrorMessage(response.data.message || "Unexpected response");
+        setErrorMessage(result.data.message || "Unexpected response");
       }
     } catch (error) {
       console.error("Error fetching employee:", error);
