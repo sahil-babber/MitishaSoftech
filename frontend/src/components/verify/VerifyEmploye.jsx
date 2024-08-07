@@ -33,8 +33,8 @@ function VerifyEmploye() {
 
       const result = await response.json();
 
-      if (result.status === 200 && result.data.success) {
-        setEmployeeData(result.data.body); // Save employee data to state
+      if (result.status === 200 && result.success) {
+        setEmployeeData(result.body); // Save employee data to state
         setErrorMessage(""); // Clear any previous error messages
       } else {
         setEmployeeData(null); // Clear employee data
