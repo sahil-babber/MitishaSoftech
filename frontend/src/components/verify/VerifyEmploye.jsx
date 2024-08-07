@@ -22,7 +22,7 @@ function VerifyEmploye() {
       console.log("Form data submitted:", data);
 
       // Call the API with the form data
-      const response = await client.post(`/employees/findEmploye`, data);
+      const response = await client.post(`/employees/findEmploye`, data , {headers:{"Content-Type": "application/json" }});
 
       if (response.status === 200 && response.data.success) {
         setEmployeeData(response.data.body); // Save employee data to state
