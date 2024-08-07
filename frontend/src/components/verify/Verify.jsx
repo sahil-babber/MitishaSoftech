@@ -31,8 +31,8 @@ function Verify() {
                 <div className="row">
                     <div className="col-lg-6 p-5">
                     <h4 className="syne mb-3">
-                    TO CHECK THE
-          <span className="text-orange">AUTHENTICATION </span> OF OUR <span className="text-orange">EMPLOYEE</span>
+                   
+          <span className="text-orange">AUTHENTICATE </span>  OUR <span className="text-orange">EMPLOYEE</span>
           </h4>
 
           <p className="text-muted">Enter your employee ID  to verify your identity </p>
@@ -41,8 +41,8 @@ function Verify() {
 
                     <div className="col-lg-6 p-5">
                     <h4 className="syne mb-3">
-                    TO CHECK THE
-          <span className="text-orange">AUTHENTICATION </span> OF OUR <span className="text-orange">INTERNS</span>
+                   
+          <span className="text-orange">AUTHENTICATE </span>  OUR <span className="text-orange">INTERNS</span>
           </h4>
 
           <p className="text-muted">Enter your  registration no.  to verify your identity</p>
