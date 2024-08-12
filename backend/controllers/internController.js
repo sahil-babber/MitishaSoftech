@@ -10,9 +10,10 @@ module.exports = {
                 fathername:req.body.fathername,
                 designation:req.body.designation,
                 adharno:req.body.adharno,
+                Duration:req.body.Duration,
                 regNO:req.body.regNO,
-                DOJ:req.body.DOJ,
-                DOR:req.body.DOR
+                from:req.body.from,
+                to:req.body.to
             })
             res.status(200).json({
                 success:true,

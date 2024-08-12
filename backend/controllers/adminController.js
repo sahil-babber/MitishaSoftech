@@ -46,7 +46,7 @@ module.exports = {
         try {
             const admin = await db.findOne({ email: req.body.email });
             if (!admin) {
-                return res.status(404).json({ success: false, message: 'Admin not found' });
+                return res.status(401).json({ success: false, message: 'Admin not found' });
             }
             const isMatch = await bcrypt.compare(req.body.password, admin.password);
             if (!isMatch) {
@@ -64,7 +64,9 @@ module.exports = {
             
         } catch (err) {
             console.error('Error logging in admin', err);
-            res.status(500).json({ success: false, message: 'Server error' });
+            res.status(500).json({ success: false, message: 'Server daf error' });
         }
-    }
+    },
+
+     
 }

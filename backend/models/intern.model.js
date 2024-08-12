@@ -7,7 +7,6 @@ const internSchema = new mongoose.Schema(
         },
         fathername:{
             type: String,
-            required: true,
         },
         designation:{
             type: String,
@@ -21,11 +20,15 @@ const internSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
-        DOJ:{
+        Duration:{
             type: String,
             required: true,
         },
-        DOR:{
+        from:{
+            type: String,
+            required: true,
+        },
+        to:{
             type: String,
             required: true,
         }

@@ -31,6 +31,11 @@ import ProtectedRoute from './components/ProtectedRoute.jsx';
 import Admin from './admin/Admin.jsx';
 import Login from './components/login/Login.jsx';
 import { AuthProvider } from './store/Auth.jsx';
+import Dashboard from './admin/dashboard/Dashboard.jsx';
+import Employes from './admin/employes/Employes.jsx';
+import Intern from './admin/interns/Intern.jsx';
+import Addemploye from './admin/addemploye/Addemploye.jsx';
+import Addintern from './admin/addintern/Addintern.jsx';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
       <AuthProvider>
@@ -60,9 +65,14 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/solution/frontend" element={<Frontend/>} />
           <Route path="/solution/backend" element={<Backend/>} />
           <Route path="login" element={<Login/>} />
-          <Route path="admin" element={<ProtectedRoute element={Admin} />} />
-
-
+          <Route path="admin" element={<ProtectedRoute element={<Admin/>} />} >
+          <Route index element={<Dashboard/>} />
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="employes" element={<Employes/>} />
+          <Route path="intern" element={<Intern/>} />
+          <Route path="add-interns" element={<Addintern/>} />
+          <Route path="add-employes" element={<Addemploye/>} />
+          </Route>
         </Route>
       </Routes>
     </Router>

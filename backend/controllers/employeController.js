@@ -35,6 +35,25 @@ module.exports = {
         }
     },
 
+    getEmploye: async (req, res) => {
+        try {
+            const employees = await db.find();
+            res.status(200).json({
+                success: true,
+                status: 200,
+                message: "Employees fetched successfully",
+                body: employees
+            });
+            
+        } catch (error) {
+            console.error("Error fetching employees", error);
+            res.status(500).json({
+                success: false,
+                message: "Internal server error"
+            });
+        }
+    },
+
 
     findEmploye: async (req, res) => {
         try {
@@ -62,6 +81,17 @@ module.exports = {
                 message: "Internal server error"
             });
         }
-    }
+    },
+
+    deleteemploye :async (req, res) => {
+        try {
+            const id = req.params.id;
+            await db.deleteOne({_id:id}); 
+            return res.status(200).json({message:"Employe deleted successfully"});
+        } catch (error) {
+            console.error(error)
+            
+        }
+     },
 
 }

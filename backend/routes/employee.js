@@ -9,5 +9,11 @@ router.post('/createEmploye',employeController.createEmploye);
 
 router.post('/findEmploye',employeController.findEmploye);
 
+router.post('/getEmploye',employeController.getEmploye);
+
+router.delete('/delete/:id',employeController.deleteemploye)
+
+
+
 
 module.exports = router;
