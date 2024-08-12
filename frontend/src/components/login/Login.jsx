@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useAuth } from "../../store/Auth";
 import { useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
+import Topbar from "../../utilities/topbar/Topbar";
 
 function Login() {
   const {
@@ -15,7 +16,7 @@ function Login() {
 //"http://localhost:8080/admin/loginAdmin"
   const onSubmit = (data) => {
 
-    axios.post(`/admin/loginAdmin`, data)
+    axios.post(`${import.meta.env.VITE_APP_API_BASE_URL}/admin/loginAdmin`, data)
       .then((res) => {
         console.log("User Login successfully:", res.data);
         toast.success("Login successfully!");
@@ -31,6 +32,7 @@ function Login() {
 
   return (
     <>
+    <Topbar/>
       <div
         style={{
           maxWidth: "400px",

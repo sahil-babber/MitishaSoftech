@@ -27,9 +27,13 @@ import Seo from './components/solutions/solutiondetails/Seo.jsx';
 import App from './components/solutions/solutiondetails/App.jsx';
 import Frontend from './components/solutions/solutiondetails/Frontend.jsx';
 import Backend from './components/solutions/solutiondetails/Backend.jsx';
-
+import ProtectedRoute from './components/ProtectedRoute.jsx';
+import Admin from './admin/Admin.jsx';
+import Login from './components/login/Login.jsx';
+import { AuthProvider } from './store/Auth.jsx';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+      <AuthProvider>
     <Router>
     <SCrollToTop />
       <Routes>
@@ -55,12 +59,14 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/solution/App" element={<App/>} />
           <Route path="/solution/frontend" element={<Frontend/>} />
           <Route path="/solution/backend" element={<Backend/>} />
-
+          <Route path="login" element={<Login/>} />
+          <Route path="admin" element={<ProtectedRoute element={Admin} />} />
 
 
         </Route>
       </Routes>
     </Router>
     <ToastContainer />
+    </AuthProvider>
   </React.StrictMode>,
 )
