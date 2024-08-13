@@ -36,6 +36,8 @@ import Employes from './admin/employes/Employes.jsx';
 import Intern from './admin/interns/Intern.jsx';
 import Addemploye from './admin/addemploye/Addemploye.jsx';
 import Addintern from './admin/addintern/Addintern.jsx';
+import Logout from './components/Logout.jsx';
+import UpdateEmployee from './admin/employes/UpdateEmploye.jsx';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
       <AuthProvider>
@@ -65,6 +67,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/solution/frontend" element={<Frontend/>} />
           <Route path="/solution/backend" element={<Backend/>} />
           <Route path="login" element={<Login/>} />
+          {/* admin route starts here  */}
           <Route path="admin" element={<ProtectedRoute element={<Admin/>} />} >
           <Route index element={<Dashboard/>} />
           <Route path="dashboard" element={<Dashboard />} />
@@ -72,7 +75,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="intern" element={<Intern/>} />
           <Route path="add-interns" element={<Addintern/>} />
           <Route path="add-employes" element={<Addemploye/>} />
+          <Route path='logout' element={<Logout/>} />
           </Route>
+          {/* admin route ends here  */}
+          <Route path="admin/employees/update/:id" element={<UpdateEmployee/>}/>
         </Route>
       </Routes>
     </Router>

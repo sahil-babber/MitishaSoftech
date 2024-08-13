@@ -5,16 +5,12 @@ const internSchema = new mongoose.Schema(
         intername:{
             type: String,
         },
-        fathername:{
-            type: String,
-        },
         designation:{
             type: String,
             required: true,
         },
         adharno:{
             type: String,
-            required: true,
         },
         regNO:{
             type: String,

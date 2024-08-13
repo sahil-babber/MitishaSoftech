@@ -7,7 +7,6 @@ module.exports = {
         try {
             const intern = await db.create({
                 intername:req.body.intername,
-                fathername:req.body.fathername,
                 designation:req.body.designation,
                 adharno:req.body.adharno,
                 Duration:req.body.Duration,
@@ -52,5 +51,38 @@ module.exports = {
                 message: "Internal server error"
             });
         }
-    }
+    },
+
+    getIntern: async (req, res) => {
+        try {
+            const employees = await db.find();
+            res.status(200).json({
+                success: true,
+                status: 200,
+                message: "Employees fetched successfully",
+                body: employees
+            });
+            
+        } catch (error) {
+            console.error("Error fetching employees", error);
+            res.status(500).json({
+                success: false,
+                message: "Internal server error"
+            });
+        }
+    },
+
+
+    deleteIntern :async (req, res) => {
+        try {
+            const id = req.params.id;
+            await db.deleteOne({_id:id}); 
+            return res.status(200).json({message:"Employe deleted successfully"});
+        } catch (error) {
+            console.error(error)
+            
+        }
+     },
+
+
 }

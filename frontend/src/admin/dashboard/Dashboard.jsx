@@ -6,7 +6,7 @@ function Dashboard() {
     <>
     <div className="contaier ">
       <div className="row justify-content-evenly">
-        <div className="col-lg-6 col-md-6">
+        <div className="col-lg-6 col-md-12 col-sm-12">
           <div className="h2 syne">Permormance Chart</div>
 
           <div className="mt-3 mb-3">
@@ -14,7 +14,7 @@ function Dashboard() {
           </div>
         </div>
 
-        <div className="col-lg-6 col-md-6">
+        <div className="col-lg-6 col-md-12 col-sm-12">
           <div className="h2 syne">Storage Chart</div>
 
           <div className="mt-5 mb-2">

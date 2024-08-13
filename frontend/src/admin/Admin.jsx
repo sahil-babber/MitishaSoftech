@@ -53,7 +53,7 @@ function ResponsiveDrawer(props) {
       </List>
       <Divider />
       <List>
-        {['Add Employes', 'Add Interns', 'Spam'].map((text, index) => (
+        {['Add Employes', 'Add Interns', 'logout'].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton onClick={() => handleNavigation(text.toLowerCase().replace(' ', '-'))}>
               <ListItemIcon>
