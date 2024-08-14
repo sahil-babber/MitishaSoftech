@@ -52,8 +52,6 @@ module.exports = {
             });
         }
     },
-
-
     findEmploye: async (req, res) => {
         try {
             const employee = await db.findOne({
@@ -81,7 +79,6 @@ module.exports = {
             });
         }
     },
-
     deleteemploye :async (req, res) => {
         try {
             const id = req.params.id;
