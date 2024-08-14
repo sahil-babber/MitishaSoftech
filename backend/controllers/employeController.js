@@ -43,8 +43,7 @@ module.exports = {
                 status: 200,
                 message: "Employees fetched successfully",
                 body: employees
-            });
-            
+            });       
         } catch (error) {
             console.error("Error fetching employees", error);
             res.status(500).json({
