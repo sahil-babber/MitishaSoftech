@@ -9,7 +9,9 @@ router.post('/findIntern',internController.findIntern);
 
 router.post('/getIntern',internController.getIntern);
 
-router.delete('/delete/:id',internController.deleteIntern)
+router.delete('/delete/:id',internController.deleteIntern);
+
+router.post('/updateIntern/:id',internController.updateIntern);
 
 
 module.exports = router;

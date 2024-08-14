@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { Link } from "react-router-dom";
@@ -117,7 +117,7 @@ function Intern() {
                     <td className="p-4">{intern.intername}</td>
                     <td className="p-4">{intern.designation}</td>
                     <td className="p-4">
-                      <Link to={`/interns/update/${intern._id}/edit`}>
+                      <Link to={`/admin/interns/update/${intern._id}`}>
                         Edit
                       </Link>
                     </td>

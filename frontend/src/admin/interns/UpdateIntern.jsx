@@ -5,9 +5,9 @@ import { Container, Row, Col, Form, Button, Alert, Spinner } from 'react-bootstr
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
-const UpdateEmployee = () => {
+const UpdateIntern = () => {
     const { id } = useParams();
-    const [employee, setEmployee] = useState(null);
+    const [intern, setIntern] = useState(null);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
     const [initialData, setInitialData] = useState(null);
@@ -16,10 +16,10 @@ const UpdateEmployee = () => {
     const { register, handleSubmit, setValue, watch } = useForm();
     const navigate = useNavigate();
 
-    const fetchEmployee = async () => {
+    const fetchIntern = async () => {
         try {
             const response = await fetch(
-                `${import.meta.env.VITE_APP_API_BASE_URL}/employees/updateEmploye/${id}`,
+                `${import.meta.env.VITE_APP_API_BASE_URL}/interns/updateIntern/${id}`,
                 {
                     method: "POST",
                     headers: {
@@ -30,21 +30,21 @@ const UpdateEmployee = () => {
             );
 
             const data = await response.json();
-            if (data && data.employee) {
-                const employeeData = data.employee;
-                setEmployee(employeeData);
+            if (data && data.intern) {
+                const internData = data.intern;
+                setIntern(internData);
                 setInitialData({
-                    employename: employeeData.employename,
-                    designation: employeeData.designation,
-                    empID: employeeData.empID,
-                    DOJ: employeeData.DOJ,
-                    DOR: employeeData.DOR,
+                    intername: internData.intername,
+                    designation: internData.designation,
+                    regNO: internData.regNO,
+                    from: internData.from,
+                    to: internData.to,
                 });
-                setValue('employename', employeeData.employename);
-                setValue('designation', employeeData.designation);
-                setValue('empID', employeeData.empID);
-                setValue('DOJ', employeeData.DOJ);
-                setValue('DOR', employeeData.DOR);
+                setValue('intername', internData.intername);
+                setValue('designation', internData.designation);
+                setValue('regNO', internData.regNO);
+                setValue('from', internData.from);
+                setValue('to', internData.to);
             } else {
                 throw new Error("Data body is undefined or null");
             }
@@ -56,7 +56,7 @@ const UpdateEmployee = () => {
     };
 
     useEffect(() => {
-        fetchEmployee();
+        fetchIntern();
     }, [id]);
 
     if (loading) return <Spinner animation="border" />;
@@ -75,7 +75,7 @@ const UpdateEmployee = () => {
     const onSubmit = async (data) => {
         try {
             const response = await fetch(
-                `${import.meta.env.VITE_APP_API_BASE_URL}/employees/updateEmploye/${id}`,
+                `${import.meta.env.VITE_APP_API_BASE_URL}/interns/updateIntern/${id}`,
                 {
                     method: "POST",  // Change to PUT or PATCH if needed
                     headers: {
@@ -88,8 +88,8 @@ const UpdateEmployee = () => {
 
             const result = await response.json();
             if (response.ok) {
-                toast.success('Employee updated successfully');
-                navigate('/admin/employes');
+                toast.success('Intern updated successfully');
+                navigate('/admin/intern');
             } else {
                 throw new Error(result.message || 'Update failed');
             }
@@ -102,20 +102,20 @@ const UpdateEmployee = () => {
         <Container>
             <Row className="justify-content-center mt-5">
                 <Col md={8} lg={6}>
-                    <h1 className="mb-5">Update Employee</h1>
-                    {employee ? (
+                    <h1 className="mb-5">Update Intern</h1>
+                    {intern ? (
                         <Form onSubmit={handleSubmit(onSubmit)}>
-                            <Form.Group controlId="employename" className="mb-3">
+                            <Form.Group controlId="intername" className="mb-3">
                                 <Form.Label>Name</Form.Label>
                                 <Form.Control
                                     type="text"
-                                    placeholder="Enter employee name"
-                                    {...register('employename')}
+                                    placeholder="Enter intern name"
+                                    {...register('intername')}
                                     className="input-admin-form"
                                 />
                             </Form.Group>
                             <Form.Group controlId="designation" className="mb-3">
-                                <Form.Label>Designation</Form.Label>
+                                <Form.Label>Techonology</Form.Label>
                                 <Form.Control
                                     type="text"
                                     placeholder="Enter designation"
@@ -123,28 +123,30 @@ const UpdateEmployee = () => {
                                     className="input-admin-form"
                                 />
                             </Form.Group>
-                            <Form.Group controlId="empID" className="mb-3">
-                                <Form.Label>Employee ID</Form.Label>
+                            <Form.Group controlId="regNO" className="mb-3">
+                                <Form.Label>Registration Number</Form.Label>
                                 <Form.Control
                                     type="text"
-                                    placeholder="Enter employee ID"
-                                    {...register('empID')}
+                                    placeholder="Enter registration number"
+                                    {...register('regNO')}
                                     className="input-admin-form"
                                 />
                             </Form.Group>
-                            <Form.Group controlId="DOJ" className="mb-3">
-                                <Form.Label>Date of Joining</Form.Label>
+                            <Form.Group controlId="from" className="mb-3">
+                                <Form.Label>From Date</Form.Label>
                                 <Form.Control
                                     type="text"
-                                    {...register('DOJ')}
+                                    placeholder="Enter start date"
+                                    {...register('from')}
                                     className="input-admin-form"
                                 />
                             </Form.Group>
-                            <Form.Group controlId="DOR" className="mb-3">
-                                <Form.Label>Date of Resignation</Form.Label>
+                            <Form.Group controlId="to" className="mb-3">
+                                <Form.Label>To Date</Form.Label>
                                 <Form.Control
                                     type="text"
-                                    {...register('DOR')}
+                                    placeholder="Enter end date"
+                                    {...register('to')}
                                     className="input-admin-form"
                                 />
                             </Form.Group>
@@ -157,7 +159,7 @@ const UpdateEmployee = () => {
                             </Button>
                         </Form>
                     ) : (
-                        <Alert variant="warning">No employee data available.</Alert>
+                        <Alert variant="warning">No intern data available.</Alert>
                     )}
                 </Col>
             </Row>
@@ -165,4 +167,4 @@ const UpdateEmployee = () => {
     );
 };
 
-export default UpdateEmployee;
+export default UpdateIntern;

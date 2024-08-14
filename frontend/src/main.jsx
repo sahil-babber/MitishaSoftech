@@ -38,6 +38,7 @@ import Addemploye from './admin/addemploye/Addemploye.jsx';
 import Addintern from './admin/addintern/Addintern.jsx';
 import Logout from './components/Logout.jsx';
 import UpdateEmployee from './admin/employes/UpdateEmploye.jsx';
+import UpdateIntern from './admin/interns/UpdateIntern.jsx';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
       <AuthProvider>
@@ -79,6 +80,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           </Route>
           {/* admin route ends here  */}
           <Route path="admin/employees/update/:id" element={<UpdateEmployee/>}/>
+          <Route path="admin/interns/update/:id" element={<UpdateIntern/>}/>
         </Route>
       </Routes>
     </Router>

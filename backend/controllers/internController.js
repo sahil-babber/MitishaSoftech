@@ -84,5 +84,17 @@ module.exports = {
         }
      },
 
+     updateIntern :async (req, res) => {
+        try {
+            const id = req.params.id;
+            const intern = await db.findByIdAndUpdate(id, req.body, {new: true});
+            if (!intern)  return res.status(404).json({ message: "Intern not found" });
+            res.status(200).json({ message: "Intern updated successfully", intern });
+        } catch (error) {
+            console.error("Error updating employee", error);
+            res.status(500).json({ message: "Internal server error" });
+        }
+    }
+
 
 }
