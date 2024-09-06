@@ -5,27 +5,26 @@ const internSchema = new mongoose.Schema(
         intername:{
             type: String,
         },
-        fathername:{
-            type: String,
-            required: true,
-        },
         designation:{
             type: String,
             required: true,
         },
         adharno:{
             type: String,
-            required: true,
         },
         regNO:{
             type: String,
             required: true,
         },
-        DOJ:{
+        Duration:{
             type: String,
             required: true,
         },
-        DOR:{
+        from:{
+            type: String,
+            required: true,
+        },
+        to:{
             type: String,
             required: true,
         }

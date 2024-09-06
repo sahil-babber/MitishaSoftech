@@ -1,6 +1,6 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -18,7 +18,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { Outlet } from 'react-router-dom';
-
+import'./Admin.css'
 const drawerWidth = 240;
 
 function ResponsiveDrawer(props) {
@@ -40,9 +40,9 @@ function ResponsiveDrawer(props) {
       <Toolbar />
       <Divider />
       <List>
-        {['Dashboard', 'Employes', 'intern'].map((text, index) => (
+        {['Dashboard', 'Employes', 'Intern'].map((text, index) => (
           <ListItem key={text} disablePadding>
-            <ListItemButton onClick={() => handleNavigation(text.toLowerCase().replace(' ', '-'))}>
+            <ListItemButton onClick={() => handleNavigation(text.toLowerCase())}>
               <ListItemIcon>
                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
               </ListItemIcon>
@@ -53,7 +53,7 @@ function ResponsiveDrawer(props) {
       </List>
       <Divider />
       <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
+        {['Add Employes', 'Add Interns', 'logout'].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton onClick={() => handleNavigation(text.toLowerCase().replace(' ', '-'))}>
               <ListItemIcon>
@@ -90,7 +90,9 @@ function ResponsiveDrawer(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
+           <Link  to='/' className='text-white text-decoration-none'>
            Mitisha Softech
+           </Link>
           </Typography>
         </Toolbar>
       </AppBar>

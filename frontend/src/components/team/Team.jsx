@@ -21,18 +21,18 @@ function Team() {
             designation: 'Frontend Developer',
             image: '/2.jpeg',
         },
-        {
-            id: 3,
-            name: 'Nitin',
-            designation: 'Digital Marketing Executive',
-            image: '/3.jpeg',
-        },
-        {
-            id: 4,
-            name: 'Komal Sharma',
-            designation: 'Web Developer',
-            image: '/1.jpeg',
-        },
+        // {
+        //     id: 3,
+        //     name: 'Nitin',
+        //     designation: 'Digital Marketing Executive',
+        //     image: '/3.jpeg',
+        // },
+        // {
+        //     id: 4,
+        //     name: 'Komal Sharma',
+        //     designation: 'Web Developer',
+        //     image: '/1.jpeg',
+        // },
         {
             id: 5,
             name: 'Shruti Gupta',

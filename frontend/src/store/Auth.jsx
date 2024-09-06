@@ -16,7 +16,7 @@ export const AuthProvider = ({ children }) => {
     const isLoggedin = !!token;
 
     // Logout user by removing token and clearing state
-    const LogoutUser = () => {
+    const LogoutAadmin = () => {
         localStorage.removeItem('token');
         setToken('');
     };
@@ -31,7 +31,7 @@ export const AuthProvider = ({ children }) => {
     }, [token]);
 
     return (
-        <AuthContext.Provider value={{ storeTokenInLocalStorage, LogoutUser, isLoggedin }}>
+        <AuthContext.Provider value={{ storeTokenInLocalStorage, LogoutAadmin, isLoggedin }}>
             {children}
         </AuthContext.Provider>
     );

@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useAuth } from "../../store/Auth";
 import { useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
+import Topbar from "../../utilities/topbar/Topbar";
 
 function Login() {
   const {
@@ -13,24 +14,33 @@ function Login() {
   const { storeTokenInLocalStorage } = useAuth();
   const navigate = useNavigate();
 //"http://localhost:8080/admin/loginAdmin"
-  const onSubmit = (data) => {
-
-    axios.post(`/admin/loginAdmin`, data)
-      .then((res) => {
-        console.log("User Login successfully:", res.data);
-        toast.success("Login successfully!");
-        console.log("response from server", res.data.token);
-        storeTokenInLocalStorage(res.data.token);
-        navigate("/admin");
-      })
-      .catch((err) => {
-        console.error(err);
-        alert(err.response?.data?.message || "An error occurred");
-      });
+const onSubmit = (data) => {
+  
+  const headers = {
+    'Content-Type': 'application/json',
+    
   };
 
+  axios.post(
+    `${import.meta.env.VITE_APP_API_BASE_URL}/admin/loginAdmin`, 
+    data, 
+    { headers } 
+  )
+  .then((res) => {
+    console.log("User Login successfully:", res.data);
+    toast.success("Login successfully!");
+    console.log("Response from server", res.data.token);
+    storeTokenInLocalStorage(res.data.token);
+    navigate("/admin");
+  })
+  .catch((err) => {
+    console.error(err);
+    alert(err.response?.data?.message || "An error occurred");
+  });
+};
   return (
     <>
+    <Topbar/>
       <div
         style={{
           maxWidth: "400px",

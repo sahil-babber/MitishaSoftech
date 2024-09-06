@@ -10,7 +10,8 @@ function VerifyCandidate() {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const [employeeData, setEmployeeData] = useState(null); // State to hold employee data
+ 
+  const [internData, setInternData] = useState(null); // State to hold intern data
   const [errorMessage, setErrorMessage] = useState(""); // State to hold error messages
 
   // Function to handle form submission
@@ -23,7 +24,7 @@ function VerifyCandidate() {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(data),
+          body: JSON.stringify({ regNO: data.empID }), 
         }
       );
 
@@ -34,19 +35,21 @@ function VerifyCandidate() {
       const result = await response.json();
 
       if (result.status === 200 && result.success) {
-        setEmployeeData(result.body); // Save employee data to state
+        setInternData(result.body); // Save intern data to state
         setErrorMessage(""); // Clear any previous error messages
       } else {
-        setEmployeeData(null); // Clear employee data
-        setErrorMessage(result.data.message || "Unexpected response");
+        setInternData(null); // Clear intern data
+        setErrorMessage(result.message || "Unexpected response"); // Adjust error message
       }
     } catch (error) {
-      console.error("Error fetching employee:", error);
-      setEmployeeData(null); // Clear employee data
-      setErrorMessage("Please Enter Valid employee ID");
+      console.error("Error fetching intern:", error);
+      setInternData(null); // Clear intern data
+      setErrorMessage("Please Enter Valid intern ID");
     }
   };
 
+  console.log(internData);
+  
   return (
     <>
       <Form onSubmit={handleSubmit(onSubmit)}>
@@ -61,7 +64,7 @@ function VerifyCandidate() {
         {errors.empID && <p className="text-danger">{errors.empID.message}</p>}
         <div className="">
           <Button type="submit" className="w-100 mt-4 rounded-pill btn-footer">
-            Verify Employe
+            Verify Intern
           </Button>
         </div>
       </Form>
@@ -72,33 +75,38 @@ function VerifyCandidate() {
             {errorMessage && (
               <div className="alert alert-danger">{errorMessage}</div>
             )}
-            {employeeData ? (
+            {internData ? (
               <Table striped bordered hover>
                 <tbody>
                   <tr className="bg-s">
-                    <th>Employee ID</th>
-                    <td>{employeeData.empID}</td>
+                    <th>Intern ID</th>
+                    <td>{internData.regNO}</td>
                   </tr>
                   <tr className="table-row-odd">
                     <th>Name</th>
                     <td className="text-capitalize">
-                      {employeeData.employename}
+                      {internData.intername}
                     </td>
                   </tr>
                   <tr className="table-row-even">
-                    <th>Designation</th>
+                    <th>Techonology</th>
                     <td className="text-capitalize">
-                      {employeeData.designation}
+                      {internData.designation}
                     </td>
                   </tr>
                   <tr className="table-row-even">
-                    <th>DOJ</th>
-                    <td>{employeeData.DOJ}</td>
+                    <th>Duration</th>
+                    <td>{internData.Duration}</td>
                   </tr>
                   <tr className="table-row-even">
-                    <th>Till</th>
-                    <td>{employeeData.DOR}</td>
+                    <th>From</th>
+                    <td>{internData.from}</td>
                   </tr>
+                  <tr className="table-row-even">
+                    <th>To</th>
+                    <td>{internData.to}</td>
+                  </tr>
+                  
                 </tbody>
               </Table>
             ) : (

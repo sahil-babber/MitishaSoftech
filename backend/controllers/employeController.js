@@ -35,7 +35,23 @@ module.exports = {
         }
     },
 
-
+    getEmploye: async (req, res) => {
+        try {
+            const employees = await db.find();
+            res.status(200).json({
+                success: true,
+                status: 200,
+                message: "Employees fetched successfully",
+                body: employees
+            });       
+        } catch (error) {
+            console.error("Error fetching employees", error);
+            res.status(500).json({
+                success: false,
+                message: "Internal server error"
+            });
+        }
+    },
     findEmploye: async (req, res) => {
         try {
             const employee = await db.findOne({
@@ -62,6 +78,29 @@ module.exports = {
                 message: "Internal server error"
             });
         }
-    }
+    },
+    deleteemploye :async (req, res) => {
+        try {
+            const id = req.params.id;
+            await db.deleteOne({_id:id}); 
+            return res.status(200).json({message:"Employe deleted successfully"});
+        } catch (error) {
+            console.error(error)
+            
+        }
+     },
 
+      updateEmploye : async (req, res) => {
+        try {
+            const id = req.params.id;
+            const employee = await db.findByIdAndUpdate(id, req.body, { new: true });
+            if (!employee) {
+                return res.status(404).json({ message: "Employee not found" });
+            }
+            res.status(200).json({ message: "Employee updated successfully", employee });
+        } catch (error) {
+            console.error("Error updating employee", error);
+            res.status(500).json({ message: "Internal server error" });
+        }
+    }
 }

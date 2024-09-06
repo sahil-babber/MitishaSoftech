@@ -7,6 +7,9 @@ import project1 from '/project-1.jpeg'
 import project2 from '/project-2.jpeg'
 import project3 from '/project-3.jpeg'
 import project4 from '/project-4.jpeg'
+import project5 from '/project-5.jpeg'
+import project6 from '/project-6.jpeg'
+
 
 
 function Projects() {
@@ -99,7 +102,7 @@ function Projects() {
                                                         by: <span className="text-orange">Anurag Sharma</span>
                                                     </div>
                                                 </div>
-                                                <div className="product-container-text text-muted me-2">Created an wordpress website for Odilia Global, offering IT solutions  and services.</div>
+                                                <div className="product-container-text text-muted me-2">Created a wordpress website for Odilia Global, offering IT solutions  and services.</div>
                                             </div>
                                         </div>
                                       
@@ -112,9 +115,24 @@ function Projects() {
                                                         by: <span className="text-orange">Jane Meldrum</span>
                                                     </div>
                                                 </div>
-                                                <div className="product-container-text text-muted me-2">Created an React website for Cristiana Koller, offering beauty solutions  and services.</div>
+                                                <div className="product-container-text text-muted me-2">Created a React website for Cristiana Koller, offering beauty solutions  and services.</div>
                                             </div>
                                         </div>
+
+                                        {/* ===medical === */}
+                                        <div className="project-container">
+                                            <img src={project5} alt="car logo" className="project-img" />
+                                            <div className="product-container-content d-flex justify-content-between gap-5 mt-4">
+                                                <div className="product-container-tittle syne">
+                                                    Aum Billing
+                                                    <div className="mt-2 by-name">
+                                                        by: <span className="text-orange">Yashi Lama</span>
+                                                    </div>
+                                                </div>
+                                                <div className="product-container-text text-muted me-2">Created a React website for Aum Billing, offering medical billing services.</div>
+                                            </div>
+                                        </div>
+
                                         <div className="project-container">
                                             <img src={project2} alt="car logo" className="project-img" />
                                             <div className="product-container-content d-flex  justify-content-between gap-5 mt-4">
@@ -124,7 +142,21 @@ function Projects() {
                                                         by: <span className="text-orange">Satish</span>
                                                     </div>
                                                 </div>
-                                                <div className="product-container-text text-muted me-2">Created an HTML, CSS, and JavaScript website for DS Graphics, offering advanced printing solutions and services. </div>
+                                                <div className="product-container-text text-muted me-2">Created a HTML, CSS, and JavaScript website for DS Graphics, offering advanced printing solutions and services. </div>
+                                            </div>
+                                        </div>
+
+                                        {/* ====gymster==== */}
+                                        <div className="project-container">
+                                            <img src={project6} alt="car logo" className="project-img" />
+                                            <div className="product-container-content d-flex justify-content-between gap-5 mt-4">
+                                                <div className="product-container-tittle syne">
+                                                    Gymster
+                                                    <div className="mt-2 by-name">
+                                                        by: <span className="text-orange">Andrew</span>
+                                                    </div>
+                                                </div>
+                                                <div className="product-container-text text-muted me-2">Created a React website for Gymster, offering fitness influencing.</div>
                                             </div>
                                         </div>
                                     </Slider>

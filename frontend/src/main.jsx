@@ -27,9 +27,21 @@ import Seo from './components/solutions/solutiondetails/Seo.jsx';
 import App from './components/solutions/solutiondetails/App.jsx';
 import Frontend from './components/solutions/solutiondetails/Frontend.jsx';
 import Backend from './components/solutions/solutiondetails/Backend.jsx';
-
+import ProtectedRoute from './components/ProtectedRoute.jsx';
+import Admin from './admin/Admin.jsx';
+import Login from './components/login/Login.jsx';
+import { AuthProvider } from './store/Auth.jsx';
+import Dashboard from './admin/dashboard/Dashboard.jsx';
+import Employes from './admin/employes/Employes.jsx';
+import Intern from './admin/interns/Intern.jsx';
+import Addemploye from './admin/addemploye/Addemploye.jsx';
+import Addintern from './admin/addintern/Addintern.jsx';
+import Logout from './components/Logout.jsx';
+import UpdateEmployee from './admin/employes/UpdateEmploye.jsx';
+import UpdateIntern from './admin/interns/UpdateIntern.jsx';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+      <AuthProvider>
     <Router>
     <SCrollToTop />
       <Routes>
@@ -55,12 +67,24 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/solution/App" element={<App/>} />
           <Route path="/solution/frontend" element={<Frontend/>} />
           <Route path="/solution/backend" element={<Backend/>} />
-
-
-
+          <Route path="login" element={<Login/>} />
+          {/* admin route starts here  */}
+          <Route path="admin" element={<ProtectedRoute element={<Admin/>} />} >
+          <Route index element={<Dashboard/>} />
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="employes" element={<Employes/>} />
+          <Route path="intern" element={<Intern/>} />
+          <Route path="add-interns" element={<Addintern/>} />
+          <Route path="add-employes" element={<Addemploye/>} />
+          <Route path='logout' element={<Logout/>} />
+          </Route>
+          {/* admin route ends here  */}
+          <Route path="admin/employees/update/:id" element={<UpdateEmployee/>}/>
+          <Route path="admin/interns/update/:id" element={<UpdateIntern/>}/>
         </Route>
       </Routes>
     </Router>
     <ToastContainer />
+    </AuthProvider>
   </React.StrictMode>,
 )

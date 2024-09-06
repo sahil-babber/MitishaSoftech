@@ -1,17 +1,19 @@
-import { Outlet } from 'react-router-dom'
-// import Topbar from './utilities/topbar/Topbar'
-import Footer from './utilities/footer/Footer'
-import ScrollToTopButton from './components/scrolltotop/ScrollToTop'
+import React from 'react';
+import { Outlet, useLocation } from 'react-router-dom';
+import Footer from './utilities/footer/Footer';
+import ScrollToTopButton from './components/scrolltotop/ScrollToTop';
 
 function Layout() {
+  const location = useLocation();
+  const isAdminPage = location.pathname.startsWith('/admin');
+
   return (
     <>
-      
-      <Outlet/>
-      <Footer/>
-      <ScrollToTopButton/>
+      <Outlet />
+      {!isAdminPage && <Footer />}
+      <ScrollToTopButton />
     </>
-  )
+  );
 }
 
-export default Layout
+export default Layout;
