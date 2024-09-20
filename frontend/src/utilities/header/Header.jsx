@@ -34,10 +34,10 @@ function Header() {
         }
     };
 
-    const handleLinkClick = () => {
-        setExpanded(false);
-        setIsOpen({ enterprises: false, services: false, solutions: false });
-    };
+        const handleLinkClick = () => {
+            setExpanded(false);
+            setIsOpen({ enterprises: false, services: false, solutions: false });
+        };
 
     const handleToggleClick = () => {
         setExpanded(expanded ? false : "expanded");

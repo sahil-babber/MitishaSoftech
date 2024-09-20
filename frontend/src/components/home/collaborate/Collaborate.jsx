@@ -3,7 +3,6 @@ import { GiThink } from "react-icons/gi";
 import { SiStartrek } from "react-icons/si";
 import { BsGraphUpArrow } from "react-icons/bs";
 import { BiLogoGraphql } from "react-icons/bi";
-import { FaArrowRightLong } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
 function Collaborate() {
@@ -16,7 +15,7 @@ function Collaborate() {
                         <ul>
                             <li className="syne">Discover Our Company</li>
                         </ul>
-                        <h2 className='Sectional-heading syne mt-3 mb-3'><span className="text-orange"> About </span> Us  </h2>
+                        <h3 className='Sectional-heading syne mt-3 mb-3'><span className="text-orange"> About </span> Us  </h3>
                         <div className="row mt-5">
                             <div className="col-lg-3 col-md-6 col-sm-12 ">
                                 <div className="d-flex gap-3 align-items-center">
@@ -26,7 +25,7 @@ function Collaborate() {
                                     <h5 className='syne help-heading'>  Thinking Big </h5>
                                 </div>
                                 <p className="text-muted mt-4">
-                                We commence by exploring the vast possibilities of your ideas. Our team dives into your vision and developing a creative, forward-thinking strategy that translates your ambitious goals into a compelling, actionable path.
+                                We commence by exploring the vast possibilities of your ideas. Our team dives into your vision and developing a creative, forward-thinking strategy that translates your ambitious goals into a compelling, actionable path.
                                 </p>
                             </div>
                             <div className="col-lg-3 col-md-6 col-sm-12 ">

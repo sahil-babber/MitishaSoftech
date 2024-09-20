@@ -2,10 +2,14 @@ import { Link } from "react-router-dom";
 import Topbar from "../../utilities/topbar/Topbar";
 import "./Solutions.css";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { Helmet } from "react-helmet";
 
 function Solutions() {
   return (
     <>
+    <Helmet>
+        <link rel="canonical" href="https://mitishasoftech.in/solutions" />
+      </Helmet>
       <Topbar />
 
       <div className="hero-bg mb-4">
@@ -19,9 +23,9 @@ function Solutions() {
                 </ul>
               </div>
             </div>
-            <h2 className="Sectional-heading mt-4 pt-3 ms-2 syne">
+            <h1 className="Sectional-heading mt-4 pt-3 ms-2 syne">
               Industrial Training{" "}
-            </h2>
+            </h1>
           </div>
         </div>
         <div className="bg-web-hero-img"></div>

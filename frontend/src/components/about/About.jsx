@@ -5,10 +5,14 @@ import Overview from "./overviewAbout/Overview";
 import Experience from "./experience/Experience";
 import Mission from "./mission/Mission";
 import Workwithus from "./workwithus/Workwithus";
+import { Helmet } from "react-helmet";
 
 function About() {
   return (
     <>
+    <Helmet>
+        <link rel="canonical" href="https://mitishasoftech.in/about" />
+      </Helmet>
       <Topbar />
       <div className="hero-bg mb-4 ">
         <div className="hero-map-bg">
@@ -23,7 +27,7 @@ function About() {
             
               </div>
             </div>
-            <h2 className=" Sectional-heading mt-4 pt-3 ms-2 syne">About Us</h2>
+            <h1 className=" Sectional-heading mt-4 pt-3 ms-2 syne">About Us</h1>
           </div>
         </div>
         <div className="bg-web-hero-img"></div>

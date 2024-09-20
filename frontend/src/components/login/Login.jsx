@@ -13,31 +13,38 @@ function Login() {
   } = useForm();
   const { storeTokenInLocalStorage } = useAuth();
   const navigate = useNavigate();
+
+
 //"http://localhost:8080/admin/loginAdmin"
-const onSubmit = (data) => {
-  
+const onSubmit = async (data) => {
   const headers = {
     'Content-Type': 'application/json',
-    
+    'Authorization': storeTokenInLocalStorage
   };
 
-  axios.post(
-    `${import.meta.env.VITE_APP_API_BASE_URL}/admin/loginAdmin`, 
-    data, 
-    { headers } 
-  )
-  .then((res) => {
+  try {
+    const res = await axios.post(
+      `${import.meta.env.VITE_APP_API_BASE_URL}/admin/loginAdmin`, 
+      data, 
+      { headers }
+    );
+    
     console.log("User Login successfully:", res.data);
     toast.success("Login successfully!");
+    
     console.log("Response from server", res.data.token);
     storeTokenInLocalStorage(res.data.token);
+    
     navigate("/admin");
-  })
-  .catch((err) => {
+  } catch (err) {
     console.error(err);
-    alert(err.response?.data?.message || "An error occurred");
-  });
+    
+    // Improved error handling
+    const errorMessage = err.response?.data?.message || "An error occurred";
+    toast.error(errorMessage);
+  }
 };
+
   return (
     <>
     <Topbar/>

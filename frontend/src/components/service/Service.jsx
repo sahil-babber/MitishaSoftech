@@ -10,10 +10,14 @@ import { IoSettingsSharp } from "react-icons/io5";
 import { SiSpringsecurity } from "react-icons/si";
 import { FaGlobe } from "react-icons/fa6";
 import SaasApplication from './saasappliction/SaasApplication';
+import { Helmet } from "react-helmet";
 
 function Service() {
   return (
     <>
+     <Helmet>
+        <link rel="canonical" href="https://mitishasoftech.in/services" />
+      </Helmet>
       <Topbar />
 
       <div className="hero-bg mb-4 ">
@@ -61,7 +65,7 @@ function Service() {
         <ul>
           <li>Services and Solutions</li>
         </ul>
-        <h1 className=' sectional-heading syne mt-4 '>Our <span className="text-orange">SaaS Development</span> Services Let You Win Big</h1>
+        <h2 className=' sectional-heading syne mt-4 '>Our <span className="text-orange">SaaS Development</span> Services Let You Win Big</h2>
         <p className='w-100  mt-4'>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
           incididunt ut labore et dolore magna.

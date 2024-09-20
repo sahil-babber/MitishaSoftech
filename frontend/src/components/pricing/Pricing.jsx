@@ -1,10 +1,14 @@
 import './Pricing.css'
 import Topbar from "../../utilities/topbar/Topbar";
 import { Link } from 'react-router-dom';
-import { FaCheck } from "react-icons/fa6";
+import { Helmet } from "react-helmet";
+
 function Pricing() {
   return (
     <>
+    <Helmet>
+        <link rel="canonical" href="https://mitishasoftech.in/pricing" />
+      </Helmet>
         <Topbar />
       
       <div className="hero-bg mb-4 ">
@@ -21,7 +25,7 @@ function Pricing() {
           
             </div>
           </div>
-          <h2 className=" Sectional-heading mt-4 pt-3 ms-2 syne">PRICING AND PLANS</h2>
+          <h1 className=" Sectional-heading mt-4 pt-3 ms-2 syne">PRICING AND PLANS</h1>
         </div>
       </div>
       <div className="bg-web-hero-img"></div>

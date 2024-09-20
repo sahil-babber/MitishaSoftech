@@ -8,6 +8,7 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import emailjs from '@emailjs/browser';
 import { toast } from 'react-toastify';
+import { Helmet } from "react-helmet";
 
 function Contact() {
 
@@ -44,6 +45,9 @@ function Contact() {
 
   return (
     <>
+     <Helmet>
+        <link rel="canonical" href="https://mitishasoftech.in/contact" />
+      </Helmet>
       <Topbar />
 
       <div className="hero-bg mb-4">
@@ -57,7 +61,7 @@ function Contact() {
                 </ul>
               </div>
             </div>
-            <h2 className="Sectional-heading mt-4 pt-3 ms-2 syne">LET’S DISCUSS YOUR OPPORTUNITY</h2>
+            <h1 className="Sectional-heading mt-4 pt-3 ms-2 syne">LET’S DISCUSS YOUR OPPORTUNITY</h1>
           </div>
         </div>
         <div className="bg-web-hero-img"></div>
@@ -265,7 +269,7 @@ function Contact() {
       <div className="container mt-5 mb-5">
         <div className="row justify-content-between">
           <div className="col-lg-5 mt-3 p-4">
-            <h2 className='syne'>India</h2>
+            <h3 className='syne'>India</h3>
             <ul className='mt-4'>
               <li>
                 Mohali
@@ -293,7 +297,7 @@ function Contact() {
           </div>
           
           <div className="col-lg-5 mt-3 p-4">
-            <h2 className='syne'>India</h2>
+            <h3 className='syne'>India</h3>
             <ul className='mt-4'>
               <li>
                 Mohali

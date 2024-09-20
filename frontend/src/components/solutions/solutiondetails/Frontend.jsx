@@ -11,6 +11,7 @@ import Typography from '@mui/material/Typography';
 import StepConnector from '@mui/material/StepConnector';
 import StepIcon from '@mui/material/StepIcon';
 import { Link } from 'react-router-dom';
+import { Helmet } from "react-helmet";
 
 const CustomConnector = (props) => (
   <StepConnector
@@ -83,6 +84,9 @@ function Frontend() {
 
   return (
     <>
+    <Helmet>
+        <link rel="canonical" href="https://mitishasoftech.in/frontend" />
+      </Helmet>
       <Topbar />
 
       <div className="hero-bg mb-4">
@@ -96,9 +100,9 @@ function Frontend() {
                 </ul>
               </div>
             </div>
-            <h2 className="Sectional-heading mt-4 pt-3 ms-2 syne">
+            <h1 className="Sectional-heading mt-4 pt-3 ms-2 syne">
               Frontend Development Training
-            </h2>
+            </h1>
           </div>
         </div>
         <div className="bg-web-hero-img"></div>

@@ -5,12 +5,12 @@ body {
 }
 
 .navbar {
-    position: fixed; 
-    top: 0;
-    width: 100%;
-    z-index: 1000; 
-    background-color: transparent; 
-    transition: background-color 0.3s ease, color 0.3s ease;
+        position: fixed; 
+        top: 0;
+        width: 100%;
+        z-index: 1000; 
+        background-color: transparent; 
+        transition: background-color 0.3s ease, color 0.3s ease;
 }
 .btn.drop-btn {
     background: none;

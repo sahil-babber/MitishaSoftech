@@ -19,6 +19,8 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { Outlet } from 'react-router-dom';
 import'./Admin.css'
+import logo from '/public/ms-logo.png';
+
 const drawerWidth = 240;
 
 function ResponsiveDrawer(props) {
@@ -38,6 +40,9 @@ function ResponsiveDrawer(props) {
   const drawer = (
     <div>
       <Toolbar />
+      <Link  to='/' className='text-white text-decoration-none'>
+      <img src={logo} alt="mitisha logo" className=' ms-2 me-2 mb-4 logo-nav' />
+      </Link>
       <Divider />
       <List>
         {['Dashboard', 'Employes', 'Intern'].map((text, index) => (

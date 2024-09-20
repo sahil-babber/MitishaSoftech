@@ -3,9 +3,14 @@ import Topbar from "../../utilities/topbar/Topbar";
 import './Career.css'
 import ChooseUs from "./chooseus/ChooseUs";
 import Sliders from "../slider/Slider";
+import { Helmet } from "react-helmet";
+
 function Career() {
   return (
     <>
+    <Helmet>
+        <link rel="canonical" href="https://mitishasoftech.in/career" />
+      </Helmet>
         <Topbar />
       
         <div className="hero-bg mb-4 ">
@@ -21,7 +26,7 @@ function Career() {
             
               </div>
             </div>
-            <h2 className=" Sectional-heading mt-4 pt-3 ms-2 syne">CAREERS</h2>
+            <h1 className=" Sectional-heading mt-4 pt-3 ms-2 syne">CAREERS</h1>
           </div>
         </div>
         <div className="bg-web-hero-img"></div>

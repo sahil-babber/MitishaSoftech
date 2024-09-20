@@ -6,11 +6,15 @@ import Tab1 from './tabcontent/Tab1';
 import Tab2 from './tabcontent/Tab2';
 import Tab3 from './tabcontent/Tab3';
 import Tab4 from './tabcontent/Tab4';
+import { Helmet } from "react-helmet";
 
 
 function Faq() {
   return (
     <>
+     <Helmet>
+        <link rel="canonical" href="https://mitishasoftech.in/faq" />
+      </Helmet>
     <Topbar/>
 
     <div className="hero-bg mb-4 ">
@@ -27,7 +31,7 @@ function Faq() {
           
             </div>
           </div>
-          <h2 className=" Sectional-heading mt-4 pt-3 ms-2 syne">FAQS</h2>
+          <h1 className=" Sectional-heading mt-4 pt-3 ms-2 syne">FAQS</h1>
         </div>
       </div>
       <div className="bg-web-hero-img"></div>

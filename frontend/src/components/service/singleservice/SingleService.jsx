@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import Topbar from '../../../utilities/topbar/Topbar';
 import './SingleService.css';
+import { Helmet } from "react-helmet";
 
 function SingleService() {
     const serviceItems = [
@@ -252,6 +253,9 @@ function SingleService() {
 
     return (
         <>
+       <Helmet>
+        <link rel="canonical" href={`https://mitishasoftech.in/services/${id}`} />
+      </Helmet>
             <Topbar />
 
             <div className="hero-bg mb-4 ">
@@ -280,7 +284,7 @@ function SingleService() {
                     <div className="col-lg-1"></div>
                     <div className="col-lg-6 d-flex align-items-center mt-3">
                        <div>
-                       <h2 className="syne">{service.heading1}</h2>
+                       <h1 className="syne">{service.heading1}</h1>
                         <div className="text-muted sora lh-base mt-3">
                             {service.text1}
                         </div>
